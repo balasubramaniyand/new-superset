@@ -1,0 +1,23 @@
+root@opexwise-datawarehouse:~/superset/docker# cd ..
+root@opexwise-datawarehouse:~/superset# docker-compose -f docker-compose-non-dev.yml up -d
+WARN[0000] Found orphan containers ([superset_worker11 superset_node1 superset_websocket1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up. 
+[+] Running 6/6
+ ⠿ Container superset_db           Started                                                                                   11.9s
+ ⠿ Container superset_cache        Running                                                                                    0.0s
+ ⠿ Container superset_worker_beat  Started                                                                                   13.4s
+ ⠿ Container superset_init         Started                                                                                   13.3s
+ ⠿ Container superset_app          Started                                                                                   13.5s
+ ⠿ Container superset_worker       Started                                                                                   13.5s
+root@opexwise-datawarehouse:~/superset# docker-compose -f docker-compose-non-dev.yml down
+[+] Running 7/7
+ ⠿ Container superset_worker_beat  Removed                                                                                   11.1s
+ ⠿ Container superset_init         Removed                                                                                    0.3s
+ ⠿ Container superset_app          Removed                                                                                   11.2s
+ ⠿ Container superset_worker       Removed                                                                                   11.4s
+ ⠿ Container superset_db           Removed                                                                                    0.8s
+ ⠿ Container superset_cache        Removed                                                                                    0.9s
+ ⠿ Network superset_default        Removed                                                                                    0.5s
+root@opexwise-datawarehouse:~/superset# docker-compose -f docker-compose-non-dev.yml --remove-orphans up -d
+unknown flag: --remove-orphans
+root@opexwise-datawarehouse:~/superset# 
+
